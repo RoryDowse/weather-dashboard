@@ -1,5 +1,7 @@
+import fs from 'fs';
+
 // TODO: Define a City class with name and id properties
-class City {
+export class City {
   name: string;
   id: string;
   constructor(name: string, id: string) {
@@ -11,14 +13,31 @@ class City {
 class HistoryService {
   // TODO: Define a read method that reads from the searchHistory.json file
   // private async read() {}
+  private filePath: string = './server/src/data/searchHistory.json';
+
   private async read(): Promise<City[]> {
-    const cities = await this.read();
-    return cities;
+    return new Promise((resolve, reject) => {
+      fs.readFile(this.filePath, 'utf8', (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(JSON.parse(data) as City[]);
+        }
+      });
+    })
   }
   // TODO: Define a write method that writes the updated cities array to the searchHistory.json file
   // private async write(cities: City[]) {}
-  private async write(cities: City[]): Promise<void> {
-    await this.write(cities);
+  async write(cities: City[]): Promise<void> {
+    return new Promise((resolve, reject) => {
+      fs.writeFile(this.filePath, JSON.stringify(cities), (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
   }
   // TODO: Define a getCities method that reads the cities from the searchHistory.json file and returns them as an array of City objects
   // async getCities() {}
