@@ -2,32 +2,29 @@ import { Router } from 'express';
 const router = Router();
 
 // import HistoryService from '../../service/historyService.js';
-import HistoryService from '../../service/historyService.js';
-const historyService = new HistoryService();
+import historyService from '../../service/historyService.js';
+
 // import WeatherService from '../../service/weatherService.js';
-import WeatherService from '../../service/weatherService.js';
-const weatherService = new WeatherService();
+import weatherService from '../../service/weatherService.js';
+
 
 // TODO: POST Request with city name to retrieve weather data
 router.post('/', async (req, res) => {
-  const { city } = req.body;
+  const { cityName } = req.body;
 
-  if (!city) {
+  if (!cityName) {
     return res.status(400).json({ error: 'City name is required' });
   }
   // TODO: GET weather data from city name
   try {
-    const locationData = await weatherService.fetchLocationData(city);
-    const weatherData = await weatherService.fetchWeatherData(locationData);
-    const currentWeather = weatherService.parseCurrentWeather(weatherData);
-    const forecastArray = weatherService.buildForecastArray(currentWeather, weatherData.list);
+    const data = await weatherService.getWeatherForCity(cityName);
    
   
   
   // TODO: save city to search history
-  const savedCity = await historyService.saveCity(city);
+  const savedCity = await historyService.addCity(cityName);
 
-  return res.status(200).json({ currentWeather, forecastArray, savedCity });
+  return res.status(200).json({ data, savedCity });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: 'Failed to fetch weather data' });
@@ -36,9 +33,9 @@ router.post('/', async (req, res) => {
 });
 
 // TODO: GET search history
-router.get('/history', async (req, res) => {
+router.get('/history', async (_req, res) => {
   try {
-    const searchHistory = await historyService.getSearchHistory();
+    const searchHistory = await historyService.getCities();
     res.status(200).json({ searchHistory });
   } catch (error) {
     console.error(error);

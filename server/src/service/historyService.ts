@@ -13,7 +13,7 @@ export class City {
 class HistoryService {
   // TODO: Define a read method that reads from the searchHistory.json file
   // private async read() {}
-  private filePath: string = './server/src/data/searchHistory.json';
+  private filePath: string = 'src/service/data/searchHistory.json';
 
   private async read(): Promise<City[]> {
     return new Promise((resolve, reject) => {
@@ -54,7 +54,7 @@ class HistoryService {
   }
   // * BONUS TODO: Define a removeCity method that removes a city from the searchHistory.json file
   // async removeCity(id: string) {}
-  async removeCity(id: string): Promise<void> {
+  async deleteCity(id: string): Promise<void> {
     const cities = await this.read();
     const updatedCities = cities.filter((city) => city.id !== id);
     await this.write(updatedCities);
