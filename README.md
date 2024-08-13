@@ -51,25 +51,24 @@ I would like to thank EdX TA James Harding and EdX tutor Eric Sayer for their gu
 ## Tests
 
 1. Unit Tests <br><br>
-   API Key and URL: Verify correct loading and usage of API keys and URLs.
-   City Conversion: Test the conversion of city names to geographic coordinates.
-   API Response Handling: Validate parsing and formatting of weather data from the API.
+   API Key and URL: Verify correct loading and usage of API keys and URLs.<br>
+   City Conversion: Test the conversion of city names to geographic coordinates.<br>
+   API Response Handling: Validate parsing and formatting of weather data from the API.<br>
    Search History: Ensure accurate addition, retrieval, and storage of cities in searchHistory.json.
 
 2. Integration Tests <br><br>
-   API Endpoints:
-
-GET /api/weather/history: Confirm it returns saved cities.
-POST /api/weather: Check city addition and weather data retrieval.
-DELETE /api/weather/history/:id: Verify city removal functionality (if implemented).
-Frontend-Backend Integration: Ensure the frontend correctly interacts with the backend for city searches and displays weather data.
+   API Endpoints:<br>
+   GET /api/weather/history: Confirm it returns saved cities.<br>
+   POST /api/weather: Check city addition and weather data retrieval.<br>
+   DELETE /api/weather/history/:id: Verify city removal functionality (if implemented).<br>
+   Frontend-Backend Integration: Ensure the frontend correctly interacts with the backend for city searches and displays weather data.
 
 3. End-to-End Tests <br><br>
-   User Flows: Simulate user actions like searching for cities, viewing weather, and managing search history to ensure expected outcomes.
+   User Flows: Simulate user actions like searching for cities, viewing weather, and managing search history to ensure expected outcomes.<br>
    UI/UX: Test interface elements for correctness and responsiveness.
 
 4. Deployment Tests <br><br>
-   Live Application: Confirm the deployed app on Render is functional and accessible.
+   Live Application: Confirm the deployed app on Render is functional and accessible.<br>
    CI/CD: Ensure automated tests run and deployments are successful.
 
 ## Questions
