@@ -148,17 +148,19 @@ class WeatherService {
 
   private buildForecastArray(currentWeather: WeatherData, weatherData: any[]): Weather[] {
     console.log('Building forecast array with data:', weatherData);
-    return weatherData.map((entry) => {
-      return new Weather({
-        city: currentWeather.city, // Use city from currentWeather
-        date: entry.dt_txt,
-        icon: entry.weather[0].icon,
-        iconDescription: entry.weather[0].description,
-        tempF: entry.main.temp,
-        humidity: entry.main.humidity,
-        windSpeed: entry.wind.speed,
+    return weatherData
+      .filter((entry) => entry.dt_txt.endsWith(' 12:00:00')) // Filter entries to only include 12:00:00
+      .map((entry) => {
+        return new Weather({
+          city: currentWeather.city, // Use city from currentWeather
+          date: entry.dt_txt,
+          icon: entry.weather[0].icon,
+          iconDescription: entry.weather[0].description,
+          tempF: entry.main.temp,
+          humidity: entry.main.humidity,
+          windSpeed: entry.wind.speed,
+        });
       });
-    });
   }
 
   async getWeatherForCity(city: string): Promise<Weather[]> {
