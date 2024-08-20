@@ -30,7 +30,7 @@ class Weather {
 
   constructor(weatherData: WeatherData) {
     this.city = weatherData.city;
-    this.date = weatherData.date;
+    this.date = new Date(weatherData.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
     this.icon = weatherData.icon;
     this.iconDescription = weatherData.iconDescription;
     this.tempF = weatherData.tempF;
