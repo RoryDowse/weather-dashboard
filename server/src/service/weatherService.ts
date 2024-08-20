@@ -33,7 +33,7 @@ class Weather {
     this.date = new Date(weatherData.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
     this.icon = weatherData.icon;
     this.iconDescription = weatherData.iconDescription;
-    this.tempF = weatherData.tempF;
+    this.tempF = parseFloat(((weatherData.tempF - 273.15) * 9/5 + 32).toFixed(2));
     this.humidity = weatherData.humidity;
     this.windSpeed = weatherData.windSpeed;
   }
