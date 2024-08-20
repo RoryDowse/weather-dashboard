@@ -1,13 +1,5 @@
 [
 	{
-		"name": "San Diego",
-		"id": "c0d7a859-c122-4f1f-9b29-59b1ca796b5b"
-	},
-	{
-		"name": "Belfast",
-		"id": "3cc550c1-c28e-4969-a035-06d4751214c3"
-	},
-	{
 		"name": "Paris",
 		"id": "f17f589f-2ad6-4efc-ab12-84d155443483"
 	},
@@ -18,5 +10,13 @@
 	{
 		"name": "paris",
 		"id": "d1820687-0dab-4488-8842-39e40de982ad"
+	},
+	{
+		"name": "San Diego",
+		"id": "543c3611-5832-42c8-bdf9-60bcdb4df8a6"
+	},
+	{
+		"name": "Belfast",
+		"id": "6ed0916f-b71f-4a51-a140-869d61b8ae5a"
 	}
 ]

@@ -31,10 +31,10 @@ router.post('/', async (req, res) => {
 router.get('/history', async (_req, res) => {
   try {
     const searchHistory = await HistoryService.getCities();
-    res.status(200).json({ searchHistory });
+    return res.json(searchHistory);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to fetch search history' });
+    return res.json({ error: 'Failed to fetch search history' });
   }
 });
 
