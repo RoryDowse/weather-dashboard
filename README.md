@@ -50,7 +50,7 @@ This project is licensed under the MIT license.
 
 - Other:
 
-I would like to thank EdX TA James Harding and EdX tutor Eric Sayer for their guidance during the development of this project.
+I would like to thank EdX TA James Harding, EdX tutor Eric Sayer, and EdX classmate Ian Ferguson for their guidance during the development of this project.
 
 ## Tests
 
