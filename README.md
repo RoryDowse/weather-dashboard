@@ -6,6 +6,8 @@
 
 The project was made to provide a response from the Open Weather API to a weather dashboard. It provides the user with a 5-day weather report as well as city search history. The project generates a response from any given city, which it converts to coordinates. During this assignment, I learned how to generate an API key, store the key and base URL to a .env file, pass the env file securely using the dotenv package, construct a to use API documentation, and make an API call.
 
+View the project at: https://weather-dashboard-wuv2.onrender.com.
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -28,6 +30,8 @@ The project was made to provide a response from the Open Weather API to a weathe
 3. Select "Search".
 4. View the forecast.
 5. Select or delete the city search history.
+
+![Weather Dashboard](./client/assets/images/weather-dashboard.png)
 
 ## License
 
